@@ -151,7 +151,7 @@ function login_h(string $value): string
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f3fbf6">
+    <meta name="theme-color" content="#e8f1eb">
     <title>Staff Login | Hungry Potters</title>
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,17 +160,33 @@ function login_h(string $value): string
     <link href="assets/css/app.css" rel="stylesheet">
     <link href="assets/css/tailwind.css" rel="stylesheet">
 </head>
-<body class="flex min-h-screen items-center justify-center bg-surface px-4 py-10 font-body-md text-on-surface antialiased">
-    <main class="w-full max-w-md">
-        <section class="rounded-2xl bg-surface-container-lowest p-8 shadow-lg sm:p-10">
-            <div class="mb-8 text-center">
-                <img alt="Hungry Potters logo" class="mx-auto mb-4 h-28 w-28 object-contain" src="assets/images/logo.png">
-                <h1 class="font-headline-lg text-headline-lg font-bold text-primary">Hungry Potters</h1>
-                <p class="mt-1 font-body-md text-body-md text-on-surface-variant">Operations &amp; Kitchen</p>
-            </div>
+<body class="login-page flex min-h-screen items-center justify-center px-4 font-body-md text-on-surface antialiased">
+    <div class="login-scenery" aria-hidden="true">
+        <div class="login-dish login-sisig">
+            <img class="login-basil" src="../images/basil no bg.png" alt="">
+            <img class="login-plate" src="../images/sisig no bg.png" alt="">
+            <img class="login-tomatoes" src="../images/tomatoes no bg.png" alt="">
+        </div>
+        <div class="login-dish login-chicken">
+            <img class="login-basil" src="../images/basil no bg.png" alt="">
+            <img class="login-plate" src="../images/chicken no bg.png" alt="">
+        </div>
+        <div class="login-dish login-egg">
+            <img class="login-basil" src="../images/basil no bg.png" alt="">
+            <img class="login-plate" src="../images/egg no bg.png" alt="">
+            <img class="login-tomatoes" src="../images/tomatoes no bg.png" alt="">
+        </div>
+    </div>
+    <main class="staff-panel">
+        <header class="staff-brand">
+            <img alt="" src="assets/images/logo.png" width="64" height="64">
+            <h1>Hungry Potters</h1>
+            <p>Operations &amp; Kitchen</p>
+        </header>
+        <section class="staff-panel-body" aria-labelledby="staff-login-title">
 
-            <h2 class="mb-1 font-headline-md text-headline-md font-bold text-primary">Staff Login</h2>
-            <p class="mb-6 font-body-md text-body-md text-on-surface-variant">Sign in to open your operations workspace.</p>
+            <h2 id="staff-login-title">Staff Login</h2>
+            <p class="staff-intro">Sign in to open your operations workspace.</p>
 
             <?php if ($errorMessage !== ''): ?>
                 <div class="mb-5 rounded-lg border border-error/30 bg-error-container p-3 font-body-md text-body-md text-on-error-container" role="alert">

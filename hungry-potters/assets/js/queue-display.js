@@ -32,8 +32,8 @@
             const empty = document.createElement('p');
             empty.className = 'queue-empty';
             empty.textContent = list === preparingList
-                ? 'Nothing cooking right now'
-                : 'Orders will appear here when ready';
+                ? 'No orders in preparation'
+                : 'No orders ready for pickup';
             list.append(empty);
             return;
         }

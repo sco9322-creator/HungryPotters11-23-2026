@@ -205,3 +205,171 @@ aside[data-role="kitchen"] {
     --sidebar-text: 244 236 228;
     --sidebar-panel: 76 58 47;
 }
+
+.login-page {
+    isolation: isolate;
+    background: #e8f1eb;
+    padding-block: 1rem;
+}
+
+.staff-panel {
+    width: min(100%, 24rem);
+    overflow: hidden;
+    border: 1px solid #d6ded6;
+    border-radius: 1.25rem;
+    background: white;
+    color: #15382d;
+    box-shadow: 0 12px 32px rgb(29 60 44 / 10%), 0 2px 5px rgb(29 60 44 / 6%);
+    font-family: "Work Sans", system-ui, sans-serif;
+}
+
+.staff-brand {
+    padding: 1rem;
+    text-align: center;
+    background: #faf0df;
+    border-bottom: 1px solid #e8dfcf;
+}
+
+.staff-brand img {
+    margin: 0 auto .35rem;
+    object-fit: contain;
+}
+
+.staff-brand h1, .staff-panel-body h2 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.staff-brand h1 { font-size: 1.7rem; }
+.staff-brand p {
+    margin-top: .25rem;
+    color: #775738;
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.staff-panel-body { padding: 1.35rem clamp(1.25rem, 3vw, 1.8rem) 1.5rem; }
+.staff-panel-body h2 { font-size: 1.55rem; }
+.staff-intro {
+    margin: .3rem 0 1rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    color: #52645b;
+}
+
+.staff-panel-body label {
+    margin-bottom: .35rem;
+    font: 600 .875rem/1.25 "Work Sans", system-ui, sans-serif;
+}
+
+.staff-panel-body input:not([type="hidden"]) {
+    height: 2.75rem;
+    border-color: #98aaa0;
+    background: #fbfcfa;
+    font-size: 1rem;
+}
+
+.staff-panel-body input:focus-visible, .staff-panel-body button:focus-visible {
+    outline: 3px solid #43866c;
+    outline-offset: 2px;
+}
+
+.staff-panel-body button {
+    min-height: 2.875rem;
+    margin-top: .15rem;
+    background: #153e30;
+    color: #fff;
+    font: 600 .95rem/1.25 "Work Sans", system-ui, sans-serif;
+    box-shadow: 0 2px 4px rgb(20 59 44 / 14%);
+}
+
+.staff-panel-body button:hover { background: #21533f; }
+
+.login-scenery {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* The square tracks the visible plate. Each PNG also has transparent side margins. */
+.login-dish {
+    position: absolute;
+    width: min(28vw, 48vh);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+}
+
+.login-sisig {
+    left: 3%;
+    top: 51%;
+    --basil-x: 58%;
+    --basil-y: 4%;
+    --basil-angle: 12deg;
+    --tomato-x: 100%;
+    --tomato-y: 107%;
+}
+
+.login-chicken {
+    left: 91%;
+    top: 14%;
+    --basil-x: 55%;
+    --basil-y: 102%;
+    --basil-angle: 155deg;
+}
+
+.login-egg {
+    left: 96%;
+    top: 87%;
+    --basil-x: 0%;
+    --basil-y: 65%;
+    --basil-angle: -55deg;
+    --tomato-x: 32%;
+    --tomato-y: -5%;
+}
+
+.login-dish img {
+    position: absolute;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+}
+
+.login-plate {
+    left: 50%;
+    top: 50%;
+    width: 195%;
+    filter: drop-shadow(4px 8px 7px rgb(24 48 33 / 15%));
+}
+
+.login-dish .login-basil {
+    left: var(--basil-x);
+    top: var(--basil-y);
+    width: 91%;
+    transform: translate(-50%, -50%) rotate(var(--basil-angle));
+    filter: drop-shadow(2px 3px 3px rgb(24 48 33 / 12%));
+}
+
+.login-tomatoes {
+    left: var(--tomato-x);
+    top: var(--tomato-y);
+    width: 53%;
+    filter: drop-shadow(2px 3px 3px rgb(24 48 33 / 15%));
+}
+
+@media (max-width: 800px) {
+    .login-dish {
+        width: min(23vw, 44vh);
+    }
+}
+
+@media (max-width: 640px) {
+    .login-scenery {
+        display: none;
+    }
+}
